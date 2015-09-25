@@ -4,8 +4,6 @@
 import encrypt
 
 
-
-
 #autorun
 if __name__ == '__main__': 
     
