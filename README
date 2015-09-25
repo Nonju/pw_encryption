@@ -1,0 +1,16 @@
+README - encryption_project
+
+Readme for an encryption project.
+
+Intended to be a test to see if I could
+build an 'encrypter' that converts a users
+password in a way that it can't collide with
+other passwords (different pw's same encrypted key).
+The intention is also to create a key that is 
+really hard to decrypt and making it hard
+for even the org using the encryption to
+try and revert pw's from their Database.
+
+Got idea from a Tom Scott video and wanted 
+to try it out myself.
+
