@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 
-import random
+import random #muy importante
 
 def test():
     "test function to see if shit's working or not"
@@ -34,7 +34,6 @@ def make_nr_inrange(nr, low=0, high=1):
     elif nr < low:
         nr = low
     
-    
     return
 
 def load_primes(filename):
@@ -57,7 +56,17 @@ def load_primes(filename):
 def make_keystring(prime_list, pw):
     """Creates a encoded keystring from a pw"""
     
+    keystring = ''
     
+    for char in pw:
+        #convert to unicode
+        tmp_nr = ord(char) 
+        #make number in range of capital english letters (65 - 90)
+        make_nr_inrange(tmp_nr, low=65, high=90)
+        #append nr to keystring
+        keystring += str(tmp_nr)
+    
+    return keystring
 
 def encrypt_pw(pw, seed=' '):
     """Encrypts a password and returns it 
@@ -65,9 +74,17 @@ def encrypt_pw(pw, seed=' '):
     """
     
     #get prime numbers
-    prime_list = load_primes('prime_numbers.txt')
+    prime_list = load_primes('prime_numbers_short.txt')
     
+    #random primelist after seed
     random.seed(seed)
-    random.sample(prime_list, len(pw))
+    prime_list = random.sample(prime_list, len(pw))
+    
+    keystring = make_keystring(prime_list, pw)
+    
+    return keystring
+    
+    
+    
     
     
